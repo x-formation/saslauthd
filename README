@@ -1,5 +1,13 @@
 saslauthd
 
-This is the saslauthd module to authenticate users who belong to the specific group.
+This is the saslauthd module to authenticate users who belong to the specific group in system.
 Tested on Ubuntu 14.04.
 
+
+Usage
+------
+class { 'saslauthd:
+  service_enable = true,
+  service_ensure = 'running',
+  allowed_group  = 'smtp',
+}
