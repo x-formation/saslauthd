@@ -1,10 +1,10 @@
 class saslauthd::config inherits saslauthd {
 
-  group { "smtp":
+  group { "${allowed_group}":
     ensure => present,
   }
 
-  file { "/etc/smtp.group.allowed":
+  file { "/etc/${allowed_group}.group.allowed":
     ensure  => present,
     content => "${allowed_group}",
   }
@@ -13,9 +13,9 @@ class saslauthd::config inherits saslauthd {
     ensure => present,
   }
 
-  file { "/etc/pam.d/smtp":
+  file { "/etc/pam.d/imap":
     ensure => present,
-    source => "puppet:///modules/saslauthd/smtp",
+    source => "puppet:///modules/saslauthd/imap",
   }
 
   file_line { 'start':
