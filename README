@@ -1,0 +1,5 @@
+saslauthd
+
+This is the saslauthd module to authenticate users who belong to the specific group.
+Tested on Ubuntu 14.04.
+
