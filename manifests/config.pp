@@ -11,6 +11,7 @@ class saslauthd::config inherits saslauthd {
 
   file { "/etc/default/saslauthd":
     ensure => present,
+    source => "puppet:///modules/saslauthd/saslauthd",
   }
 
   file { "/etc/pam.d/imap":
