@@ -1,4 +1,4 @@
-auth required pam_listfile.so onerr=fail item=group sense=allow file=/etc/smtp.group.allowed
+auth required pam_listfile.so onerr=fail item=group sense=allow file=/etc/<%= allowed_group %>.group.allowed
 auth	[success=1 default=ignore]	pam_unix.so nullok_secure
 auth	requisite			pam_deny.so
 auth	required			pam_permit.so
